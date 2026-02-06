@@ -23,5 +23,12 @@ public class GoogleBookService {
                 .retrieve()
                 .body(GoogleBook.class);
     }
+
+    public GoogleBook getBookById(String googleId){
+        return restClient.get()
+                .uri("/volumes/{id}", googleId)
+                .retrieve()
+                .body(GoogleBook.class);
+    }
 }
 
